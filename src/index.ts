@@ -52,6 +52,38 @@ R.all(f, arrAll);
 const gt09 = R.gte(R.__, 9);
 const lt20 = R.lte(R.__, 30);
 
-console.log(R.allPass([gt09, lt20])(12)); // true
-console.log(R.allPass([gt09, lt20])(8)); // false
-console.log(R.all(R.allPass([gt09, lt20]))(arrAll)); // true
+// console.log(R.allPass([gt09, lt20])(12)); // true
+// console.log(R.allPass([gt09, lt20])(8)); // false
+// console.log(R.all(R.allPass([gt09, lt20]))(arrAll)); // true
+
+/**
+ * always
+ * Returns a function that always returns the given value. Note that for non-primitives the value returned is a reference to the original value.
+ */
+
+// const K = (x) => (_) => x;
+// console.log(R.always(1)('asdasdasdasda')); // 1
+
+/**
+ * and
+ * Returns the first argument if it is falsy, otherwise the second argument. Acts as the boolean and statement if both inputs are Booleans.
+ */
+// R.and(true, true); //=> true
+// R.and(true, false); //=> false
+// R.and(false, true); //=> false
+// R.and(false, false); //=> false
+
+/**
+ * any
+ * (a → Boolean) → [a] → Boolean
+ * Returns true if at least one of the elements of the list match the predicate, false otherwise.
+ */
+// console.log(R.any(R.equals(10), [10, 12])); // true
+// console.log(R.any(R.equals(10), [11, 12])); // false
+
+/**
+ * anyPass
+ * allPass for logical or
+ */
+
+// console.log(R.anyPass([R.gte(R.__, 10), R.lte(R.__, 5)])(9)); // false
