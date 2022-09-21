@@ -87,3 +87,16 @@ const lt20 = R.lte(R.__, 30);
  */
 
 // console.log(R.anyPass([R.gte(R.__, 10), R.lte(R.__, 5)])(9)); // false
+
+/**
+ * ap
+ * ap applies a list of functions to a list of values.
+ * Dispatches to the ap method of the second argument, if present. Also treats curried functions as applicatives.
+ */
+
+// result [] length is funcs * values
+R.ap([R.multiply(2), R.add(3)], [1, 2, 3]); //=> [2, 4, 6, 4, 5, 6]
+R.ap([R.concat('tasty '), R.toUpper], ['pizza', 'salad']); //=> ["tasty pizza", "tasty salad", "PIZZA", "SALAD"]
+// R.ap can also be used as S combinator
+// when only two functions are passed
+R.ap(R.concat, R.toUpper)('ramda'); // ramdaRAMDA // (a -> b -> c) -> (a -> b ) -> (a -> c)
