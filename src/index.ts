@@ -100,3 +100,14 @@ R.ap([R.concat('tasty '), R.toUpper], ['pizza', 'salad']); //=> ["tasty pizza", 
 // R.ap can also be used as S combinator
 // when only two functions are passed
 R.ap(R.concat, R.toUpper)('ramda'); // ramdaRAMDA // (a -> b -> c) -> (a -> b ) -> (a -> c)
+
+/**
+ * aperture
+ * Number → [a] → [[a]]
+ */
+
+R.aperture(2, [1, 2, 3, 4, 5]); //=> [[1, 2], [2, 3], [3, 4], [4, 5]]
+R.aperture(3, [1, 2, 3, 4, 5]); //=> [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
+R.aperture(7, [1, 2, 3, 4, 5]); //=> []
+// console.log(R.aperture(1)(['2'])); // [ [ '2' ] ]
+// console.log(R.aperture(5, [1, 2, 3, 4, 5])); // [ [ 1, 2, 3, 4, 5 ] ]
