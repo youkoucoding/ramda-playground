@@ -111,3 +111,12 @@ R.aperture(3, [1, 2, 3, 4, 5]); //=> [[1, 2, 3], [2, 3, 4], [3, 4, 5]]
 R.aperture(7, [1, 2, 3, 4, 5]); //=> []
 // console.log(R.aperture(1)(['2'])); // [ [ '2' ] ]
 // console.log(R.aperture(5, [1, 2, 3, 4, 5])); // [ [ 1, 2, 3, 4, 5 ] ]
+
+/**
+ * append
+ * a → [a] → [a]
+ * Returns a new list containing the contents of the given list, followed by the given element.
+ */
+R.append('tests', ['write', 'more']); //=> ['write', 'more', 'tests']
+R.append('tests', []); //=> ['tests']
+R.append(['tests'], ['write', 'more']); //=> ['write', 'more', ['tests']]
