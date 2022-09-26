@@ -120,3 +120,11 @@ R.aperture(7, [1, 2, 3, 4, 5]); //=> []
 R.append('tests', ['write', 'more']); //=> ['write', 'more', 'tests']
 R.append('tests', []); //=> ['tests']
 R.append(['tests'], ['write', 'more']); //=> ['write', 'more', ['tests']]
+
+/**
+ * apply
+ * (*… → a) → [*] → a
+ * Applies function fn to the argument list args.
+ */
+let nums = [1, 2, 3, -99, 42, 6, 7];
+R.apply(Math.max, nums); //=> 42
