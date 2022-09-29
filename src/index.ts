@@ -119,7 +119,7 @@ R.aperture(7, [1, 2, 3, 4, 5]); //=> []
  */
 R.append('tests', ['write', 'more']); //=> ['write', 'more', 'tests']
 R.append('tests', []); //=> ['tests']
-R.append(['tests'], ['write', 'more']); //=> ['write', 'more', ['tests']]
+// R.append(['tests'], ['write', 'more']); //=> ['write', 'more', ['tests']]
 
 /**
  * apply
@@ -128,3 +128,16 @@ R.append(['tests'], ['write', 'more']); //=> ['write', 'more', ['tests']]
  */
 let nums = [1, 2, 3, -99, 42, 6, 7];
 R.apply(Math.max, nums); //=> 42
+
+/**
+ * applySpec
+ * {k: ((a, b, …, m) → v)} → ((a, b, …, m) → {k: v})
+ * Given a spec object recursively mapping properties to functions, creates a function producing an object of the same structure,
+ * by mapping each property to the result of calling its associated function with the supplied arguments.
+ */
+
+const getMetrics = R.applySpec({
+  sum: R.add,
+  nested: { mul: R.multiply },
+});
+getMetrics(2, 4); // => { sum: 6, nested: { mul: 8 } }
