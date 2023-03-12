@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "ts-node-dev --exit-child src/index.ts",
+    "pipe": "ts-node-dev --exit-child src/pipe.ts",
     "start": "ts-node src/index.ts"
   },
   "repository": {
