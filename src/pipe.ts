@@ -1,5 +1,6 @@
 import R from "ramda";
 
+// synchronous funcition's pipeline style
 function firstAdd(left: number, right: number) {
   return left * right;
 }
