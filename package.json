@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "ts-node-dev --exit-child src/index.ts",
     "pipe": "ts-node-dev --exit-child src/pipe.ts",
+    "pipeWith": "ts-node-dev --exit-child src/pipeWith.ts",
     "start": "ts-node src/index.ts"
   },
   "repository": {
